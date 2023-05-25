@@ -1,0 +1,77 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import numpy as np
+
+
+headers = {
+    'User-Agent' 'Mozilla5.0 (Windows NT 10.0; Win64; x64) AppleWebKit537.36 (KHTML, like Gecko) Chrome58.0.3029.110 Safari537.3'
+}
+    
+product_url = httpswww.flipkart.commotorola-g32-satin-silver-128-gbproduct-reviewsitm8e7224d29bfc6pid=MOBGM2EHGUNGDDQR&lid=LSTMOBGM2EHGUNGDDQRKIBLDP&marketplace=FLIPKART
+    
+reviews = []
+page = 1
+has_more_reviews = True
+
+while has_more_reviews
+        url = f{product_url}&page={page}
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        next_button = soup.find('a', {'class' _1LKTO3})
+        print(next_button,next_button)
+
+        review_containers = soup.find_all('div', {'class' '_1AtVbE'})
+
+        for container in review_containers
+            try
+                rating_element = container.find('div', {'class' _3LWZlK _1BLPMq})
+                rating = rating_element.text.strip() if rating_element else None
+            
+    
+                review_text_element = container.find('div', {'class' 't-ZTKy'})
+#                 print(review_text_element,review_text_element)
+                review_text = review_text_element.text.strip() if review_text_element else None
+
+                customer_name_element = container.find('p', {'class' '_2sc7ZR','class' '_2V5EHH'})
+                customer_name = customer_name_element.text.strip() if customer_name_element else None
+
+
+                comment_tags_elements = container.find('p', {'class' _2-N8zT})
+                comment_tags = comment_tags_elements.text.strip() if comment_tags_elements else None
+#                 for tag in comment_tags_elements
+#                     comment_tags.append(tag.text.strip())
+
+                review = {
+                    'rating' rating,
+                    'review_text' review_text,
+                    'comment_tags' comment_tags,
+                    'customer_name' customer_name
+                }
+                reviews.append(review)
+
+            except Exception as e
+                print('Error', e)
+
+        next_button = soup.find('a', {'class' _1LKTO3})
+        has_more_reviews = has_more_reviews is not None
+        if page  10 
+            has_more_reviews=False
+        page += 1
+
+
+
+df = pd.DataFrame(reviews)
+df=df.dropna()
+
+# Filter out rows with empty or mischievous names
+df['customer_name'] = np.where(df['customer_name'].str.len()  0, df['customer_name'], Not Available)
+
+# Print unique customer names
+unique_names = df['customer_name'].unique()
+print(unique_names)
+
+df.reset_index(drop=True, inplace=True)
+print(df)
+df.to_csv(.reviews.csv)
+display(df)
