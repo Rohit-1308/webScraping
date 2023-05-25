@@ -1,0 +1,57 @@
+Installing DataKund  PIP         -2023-05-11 10:10:33
+
+
+DataKundTypePip  PIP         -2023-05-11 10:10:33
+
+
+driverversion113  PIP         -2023-05-11 10:10:33
+
+
+Exception in adding extension:-Path to the extension doesn't exist  PIP         -2023-05-11 10:10:33
+
+
+Exception in adding right click extension:-Path to the extension doesn't exist  PIP         -2023-05-11 10:10:33
+
+
+Exception in adding Cookies blocker 1st extension:-Path to the extension doesn't exist  PIP         -2023-05-11 10:10:33
+
+
+Exception in adding Cookies blocker 2nd extension:-Path to the extension doesn't exist  PIP         -2023-05-11 10:10:33
+
+
+Exception in adding Profile path:-'profile_path'  PIP         -2023-05-11 10:10:33
+
+
+Exception in setting agent'user_agent'  PIP         -2023-05-11 10:10:33
+
+
+Exception in saving download folder'download_folder'  PIP         -2023-05-11 10:10:33
+
+
+Install required:-True  PIP         -2023-05-11 10:10:33
+
+
+downloadchrome function  PIP         -2023-05-11 10:10:33
+
+
+Version found from subprocess code113  PIP         -2023-05-11 10:10:34
+
+
+driverversion113  PIP         -2023-05-11 10:10:34
+
+
+Driver Version:-113  PIP         -2023-05-11 10:10:34
+
+
+Folder path  PIP         -2023-05-11 10:10:37
+
+
+Going to try new version  PIP         -2023-05-11 10:10:37
+
+
+Version found from subprocess code113  PIP         -2023-05-11 10:10:38
+
+
+Going to download new chrome version 113  PIP         -2023-05-11 10:10:38
+
+
